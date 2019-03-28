@@ -17,21 +17,21 @@ import javax.swing.JTextField;
  * @author Estudiantes
  */
 public class Vista extends JFrame {
-
+    
     JPanel p1 = new JPanel();
     JButton b1 = new JButton("Calcular");
     JLabel l1 = new JLabel();
+    JTextField t1 = new JTextField();
 
     public void panelPrincipal() {
 
-        JTextField t1 = new JTextField();
         b1.setSize(90, 50);
-        b1.setLocation(150, 240);
+        b1.setLocation(85, 175);
         l1.setSize(150, 60);
-        l1.setLocation(75, 50);
+        l1.setLocation(75, 40);
         l1.setText("Ingrese un numero");
         t1.setSize(60, 50);
-        t1.setLocation(100, 150);
+        t1.setLocation(100, 100);
         p1.setLayout(null);
         p1.add(b1);
         p1.add(l1);

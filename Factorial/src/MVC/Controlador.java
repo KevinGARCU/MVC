@@ -13,8 +13,8 @@ import javax.swing.JOptionPane;
  *
  * @author Estudiantes
  */
-public class Controlador implements ActionListener{
-    
+public class Controlador implements ActionListener {
+
     Vista v;
     Modelo m;
 
@@ -22,12 +22,26 @@ public class Controlador implements ActionListener{
         this.v = v;
         this.m = m;
     }
-    
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        int num = m.factorial(Integer.parseInt(v.l1.getText()));
-        JOptionPane.showMessageDialog(v, "El factorial es" + num);
+        if (e.getSource().equals(v.b1)) {
+            String num = v.t1.getText();
+            if (m.isNumeric(num)) {
+                int aux = Integer.parseInt(num);
+                if (aux < 0) {
+                    JOptionPane.showMessageDialog(v, "No se admiten negativos");
+                }
+                if (aux > 0) {
+                    int resultado = m.factorial(aux);
+                    JOptionPane.showMessageDialog(v, "El factorial es " + resultado);
+                }
+            } else {
+                JOptionPane.showMessageDialog(v, "No se admiten letras");
+            }
+
+        }
+
     }
-    
+
 }

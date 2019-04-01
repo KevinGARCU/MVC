@@ -17,14 +17,16 @@ public class Controlador implements ActionListener {
 
     Vista v;
     Modelo m;
+    boolean letra;
 
     public Controlador(Vista v, Modelo m) {
         this.v = v;
         this.m = m;
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
+
         if (e.getSource().equals(v.b1)) {
             String num = v.t1.getText();
             if (m.isNumeric(num)) {
@@ -38,10 +40,10 @@ public class Controlador implements ActionListener {
                 }
             } else {
                 JOptionPane.showMessageDialog(v, "No se admiten letras");
+                v.t1.setText("");
             }
 
         }
-
     }
 
 }

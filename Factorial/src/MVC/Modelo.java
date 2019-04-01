@@ -4,28 +4,27 @@
  * and open the template in the editor.
  */
 package MVC;
-
 /**
  *
  * @author Estudiantes
  */
 public class Modelo {
-    
-    public int factorial(int n){
+
+    public int factorial(int n) {
         int fact = 1;
-        for(int i=1; i<=n; i++){
+        for (int i = 1; i <= n; i++) {
             fact *= i;
         }
         return fact;
     }
-    
-    public boolean isNumeric(String cadena){
-        try{
+
+    public boolean isNumeric(String cadena) {
+        try {
             Integer.parseInt(cadena);
             return true;
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             return false;
         }
     }
-    
+
 }
